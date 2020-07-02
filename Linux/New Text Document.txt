@@ -1,0 +1,64 @@
+nano /etc/ssh/sshd_config
+
+Port 22
+port 2222
+
+$ tar -xvf TarDocs.tar -C MyFinancials/ --strip-components=2 "TarDocs/Financials/investments1.txt" "TarDocs/Financials/Assests_1.txt"
+$ tar cvf MyFinancials.tar --exclude="TarDocs/Documents/Java" TarDocs/
+
+sudo tar --listed-incremental=snapshot.file -cvzf logs_backup.tar.gz /var/log
+
+0 6 * * */4   tar -zcf /auth_backup.tgz /var/log/auth.log
+
+sudo mkdir -p ~/home/backups/{freemem,diskuse,openlist,freedisk}
+
+  #!/bin/bash
+
+    free -h > ~/home/backups/freemem/free_mem.txt
+
+    du -h > ~/home/backups/diskuse/disk_usage.txt
+
+    lsof > ~/home/backups/openlist/openlist.txt
+
+    df -h > ~/home/backups/freedisk/freedisk.txt
+
+
+
+$ nano /etc/rsyslog.d/50-default.conf
+
+auth.!debug              /var/log/mail.log
+
+
+
+
+
+
+
+```bash
+(
+  rulename = "Security Control",
+  severity = 100,
+  emailto = "sysadmin@company.org;security_manager@company.org"
+)
+{
+  /lib64     -> $(ReadOnly) ;
+  /usr/lib64 -> $(ReadOnly) ;
+}
+```
+
+**Solution**:
+
+```bash
+0 */12 * * *   /usr/sbin/tripwire --check --email-report
+```
+
+
+
+```bash
+/var/log/auth.log {
+  weekly
+  rotate 7
+  notifempty
+  delaycompression
+  missingok
+}
